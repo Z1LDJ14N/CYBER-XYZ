@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools - XYZ BY ZILDJIAN</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-area">
+            <img src="https://autoresbot.com/tmp_files/7f9a5a8b-3675-4e5c-91fa-c43a013f6ed5.jpg" alt="Logo" class="logo-img">
+            <span>Tools Kit</span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h3>📝 Text Counter</h3>
+            <textarea id="counterInput" placeholder="Ketik sesuatu..." rows="3"></textarea>
+            <div id="counterResult" class="result-box">0 Karakter | 0 Kata</div>
+        </div>
+
+        <div class="card">
+            <h3>🔠 Case Converter</h3>
+            <input type="text" id="caseInput" placeholder="Masukkan teks">
+            <div style="display: flex; gap: 5px;">
+                <button class="btn" onclick="convertCase('upper')">UPPER</button>
+                <button class="btn" onclick="convertCase('lower')">lower</button>
+            </div>
+            <div id="caseResult" class="result-box" onclick="copyResult(this)">Hasil akan muncul di sini...</div>
+        </div>
+
+        <div class="card">
+            <h3>🔑 Password Generator</h3>
+            <div style="display: flex; gap: 5px; align-items: center;">
+                <input type="number" id="passLength" value="12" min="4" max="32" style="width: 60px;">
+                <span>Panjang Karakter</span>
+            </div>
+            <button class="btn" onclick="generatePassword()">Buat Password</button>
+            <div id="passResult" class="result-box" onclick="copyResult(this)">Klik tombol di atas</div>
+        </div>
+
+        <div class="card">
+            <h3>🔗 URL Encoder/Decoder</h3>
+            <textarea id="urlInput" rows="2" placeholder="Masukkan URL"></textarea>
+            <div style="display: flex; gap: 5px;">
+                <button class="btn" onclick="processUrl('encode')">Encode</button>
+                <button class="btn" onclick="processUrl('decode')">Decode</button>
+            </div>
+            <div id="urlResult" class="result-box" onclick="copyResult(this)">...</div>
+        </div>
+
+        <div class="card">
+            <h3>Fail JSON Formatter</h3>
+            <textarea id="jsonInput" rows="3" placeholder='Paste messy JSON here...'></textarea>
+            <button class="btn" onclick="formatJSON()">Rapikan JSON</button>
+            <pre id="jsonResult" class="result-box" style="overflow-x: auto;">...</pre>
+        </div>
+    </div>
+
+    <div class="mobile-nav">
+        <a href="index.html">🏠<br>Home</a>
+        <a href="tools.html" class="active">🛠️<br>Tools</a>
+        <a href="utility.html">⚙️<br>Utility</a>
+        <a href="support.html">❤️<br>Support</a>
+    </div>
+
+    <div id="toast" class="toast">Disalin ke clipboard!</div>
+
+    <script src="js/main.js"></script>
+    <script src="js/tools.js"></script>
+</body>
+</html>
